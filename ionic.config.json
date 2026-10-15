@@ -1,0 +1,7 @@
+{
+  "name": "NFL_Viz",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

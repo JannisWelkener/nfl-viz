@@ -1,0 +1,13 @@
+::ng-deep .axis-label {
+  font-size: 0.75vw;
+  fill: var(--ion-text-color);
+}
+
+.component-wrapper{
+  border: 2px solid white;
+
+  margin: 10px;
+  margin-bottom: 0px;
+  width: calc(100% - 22px);
+  height: calc(100% - 14px);
+}

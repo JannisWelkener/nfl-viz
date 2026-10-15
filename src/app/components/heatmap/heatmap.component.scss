@@ -1,0 +1,106 @@
+.perspective-wrapper {
+  perspective: 500px; /* Control depth of 3D effect */
+  perspective-origin: bottom center;
+  margin-top: -45px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+.heatmap-container {
+    transform: rotateX(10deg); //rotation for 3d effect
+    transform-style: preserve-3d;
+    aspect-ratio: 3/4;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 3fr 1fr 1fr 1fr;
+    gap: 8px;
+    //width: 400px;
+    width: 100%;
+    //height: 100%;
+    z-index: 1;
+    position: relative;
+}
+.heatmap-cell {
+    transform-style: preserve-3d;
+    position: relative;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #000;
+    border-radius: 4px;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: background 0.3s ease;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 2px,
+        transparent 2px,
+        transparent 6px
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+  
+    span {
+      z-index: 3;
+    }
+  }
+:host {
+    display: block;
+    aspect-ratio: 3 / 4;
+}
+.heatmap-tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 4px;
+  white-space: pre-line;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  width: 29vw;
+  height: 37vw;
+  overflow: hidden;
+  border: 2px solid white;
+  padding: 1rem;
+  margin: 10px;
+  
+}
+.yardline-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 2px dashed rgba(255, 255, 255, 0.4);
+  z-index: 1;
+}
+.yardline-label {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  font-size: 0.6rem;
+  padding: 2px 5px;
+  border-radius: 4px;
+  z-index: 2;
+}

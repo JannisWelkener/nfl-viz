@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true">
+<div *ngIf="landscape">
+  <div class="side_menu">
+
+    <ion-item>
+      <ion-label>Choose a Season</ion-label>
+      <ion-select [(ngModel)]="selectedSeason" interface="popover">
+        <ion-select-option *ngFor="let season of seasons" [value]="season">
+          {{ season }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-segment [(ngModel)]="selectedOption">
+      <ion-segment-button value="pre">
+        Pre
+      </ion-segment-button>
+      <ion-segment-button value="reg">
+        Regular
+      </ion-segment-button>
+      <ion-segment-button value="post">
+        Post
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-button class="load_season_btn" (click)="load_season_data()">Load Season</ion-button>
+
+  </div>
+
+  <div class="center" *ngIf="games.length > 0">
+    <div *ngFor="let g of games" (click)="select_game(g.game_id)">
+      <div class="game_wrapper">
+        <table>
+          <th>
+            <div class="left" [ngStyle]="{background: 'linear-gradient(90deg, ' + get_team_name_and_color(g.info.home_team).color + ', #000000)'}">
+              <img src="https://a.espncdn.com/i/teamlogos/nfl/500/{{g.info.home_team}}.png"
+                  onerror="this.onerror=null;
+                  this.src='https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/NFL_Pro_Bowl_logo.svg/640px-NFL_Pro_Bowl_logo.svg.png';"
+                  class="team_image img_left"/>
+                  <p class="team_name team_left">{{ g.info.home_team }}</p>
+                  <p class="full_team_name team_left">{{ get_team_name_and_color(g.info.home_team).name  }}</p>
+            </div>
+          </th>
+
+          <th class="score">
+            <div class="score_div">
+              <p class="score_text">{{ g.info.final_home_score }} - {{ g.info.final_away_score }}</p>
+              <p class="game_date">{{g.info.game_date}}</p>
+            </div>
+          </th>
+          <th>
+
+            <div class="right" [ngStyle]="{background: 'linear-gradient(90deg, #000000,' + get_team_name_and_color(g.info.away_team).color + ')'}">
+              <img src="https://a.espncdn.com/i/teamlogos/nfl/500/{{g.info.away_team}}.png"
+                  onerror="this.onerror=null;
+                  this.src='https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/NFL_Pro_Bowl_logo.svg/640px-NFL_Pro_Bowl_logo.svg.png';"
+                  class="team_image img_right"/>
+                  <p class="team_name team_right">{{ g.info.away_team }}</p>
+                  <p class="full_team_name team_right">{{ get_team_name_and_color(g.info.away_team).name  }}</p>
+            </div>
+          </th>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Games still loading -->
+  <div class="center-load" *ngIf="games.length == 0">
+    <ion-spinner name="lines" class="loading vert_center"></ion-spinner>
+  </div>
+</div>
+
+<div *ngIf="!landscape" class="rotate-warning">
+  <h1>Use landscape mode</h1>
+</div>
+</ion-content>

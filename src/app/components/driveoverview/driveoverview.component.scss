@@ -1,0 +1,276 @@
+.driveVis{
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  border-radius: 10px;
+  max-height: 20px;
+}
+
+
+.scroll-field{
+  position: relative;
+  height: 500px;
+  overflow-y:auto;
+  overflow: auto;
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 2px solid white;
+  background-color: green;
+  scrollbar-width: thin;
+}
+
+.scroll-field::-webkit-scrollbar {
+  width: 8px; /* Your custom width */
+}
+
+.field{
+  flex: 1;
+  width: 1308px;
+  height: fit-content;
+  //height: 500px;
+  //overflow-y: ;
+  padding-left: 150px;
+  padding-top: 5px;
+  background-color: green;
+
+
+}
+
+.ind{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: aliceblue;
+  border-radius: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.driveStart{
+  margin: 0px;
+  padding: 0px;
+}
+
+.entire-field{
+  display: flex;
+  align-items: stretch;
+  width: fit-content;
+}
+
+.endzone{
+  width: 150px;
+  background-color: green;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  overflow: visible;
+  position: relative;
+  // border-right: 2px solid white;
+  // border-left: 2px solid white;
+  z-index: 0;
+
+  border-bottom: 2px solid white;
+}
+
+.endzone-wordmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: auto; /* bigger than container */
+  width: 400px;
+
+  //background: bisque;
+  min-width: 400px;
+}
+
+.endzone-l{
+  border-right: 2px solid white;
+  position: absolute;
+  width: 150px;
+  height: 500px;
+  background-color: green;
+  overflow: visible;
+  // z-index: 0;
+  margin-left: 0px;
+  border-bottom: 2px solid white;
+}
+
+.endzone-r{
+  position: absolute;
+  width: 150px;
+  height: 500px;
+  background-color: green;
+  overflow: visible;
+  // z-index: 0;
+  margin-left: 1150px;
+
+border-bottom: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.endzone-left{
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.endzone-right{
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.dynamic-wrapper{
+  border: 2px solid white;
+  margin: 10px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  width: 70vw;
+  height: fit-content;
+  overflow: hidden;
+  position: relative;
+  // height: 500px;
+  aspect-ratio: 1308 / 570;
+  // width: fit-content;
+
+  // background-color: red;
+}
+
+.scalable{
+  transform-origin: top left;
+  transform: scale(0.5);     /* Scale based on wrapper/container */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wrapper{
+  //width: fit-content;
+  height: 570px;
+  width: 1308px;
+  overflow: hidden;
+}
+
+.custom-range-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  margin-top: -45px;
+
+  //background-color: red;
+}
+
+.custom-range {
+  // -webkit-appearance: none;
+  width: calc(100% + 32px);
+  height: 6px;
+  border-radius: 3px;
+  background: none;
+  outline: none;
+  margin: 16px 0;
+}
+
+.custom-range::-webkit-slider-thumb {
+  height: 60px;
+  width: 32px;
+  background: url('/assets/slider.png') no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.custom-range::-moz-range-thumb {
+  height: 60px;
+  width: 32px;
+  padding-top: 20px;
+  background: url('/assets/slider.png') no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  border-radius: 0;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+
+
+
+
+
+.slider-ticks {
+  margin-top: -10px;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tick {
+  width: 1px;
+  height: 12px;
+  background-color: rgb(102, 102, 102);
+}
+
+.outcome{
+  width: fit-content;
+  height: 20px;
+  width: 0px;
+  max-height: 20px;
+  overflow: visible;
+}
+
+.outcome-text{
+  width: fit-content;
+  position: absolute;
+  max-height: 20px;
+  z-index: 10;
+  font-size: 18px;
+}
+
+.indicator{
+  position: absolute;
+  width: 30px;
+  height: fit-content;
+}
+
+.indicator-icon{
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+#epa-chart{
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  margin-left: -4px;
+  margin-top: 40px;
+}
+
+.drive-indicator{
+  width: 100%;
+  height: 10px;
+  display: flex;
+}
+
+.drive-bars{
+  height: 10px;
+  width: 1%;
+}
+
+.chart-wrapper{
+  margin-top: -36px;
+}
+
+.play-desc{
+  position: absolute;
+  margin-left: 30px;
+  margin-top: -1px;
+  width: 200px;
+}

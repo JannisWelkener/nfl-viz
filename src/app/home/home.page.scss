@@ -1,0 +1,163 @@
+.side_menu{
+  margin-left: 50px;
+  margin-top: 40px;
+  width: 300px;
+  height: fit-content;
+  background-color: #1e1e1e;
+  position: fixed;
+  z-index: 100;
+  border-radius: 10px;
+}
+
+.load_season_btn{
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 3px;
+}
+
+ion-spinner{
+  width: 40vh;
+  height: 40vh;
+}
+
+.vert_center{
+  margin-top: 30vh;
+}
+
+.center{
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.center-load{
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.left{
+  width: 25vw;
+  height: 11vh;
+  border-radius: 20px 0px 0px 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.right{
+  width: 25vw;
+  height: 11vh;
+  border-radius: 0px 20px 20px 0px;
+  overflow: hidden;
+  position: relative;
+}
+
+.game_wrapper{
+  margin: 15px;
+  overflow: hidden;
+
+  cursor: pointer;
+  width: fit-content;
+}
+
+th{
+  height: 11vh;
+  width: 25vw;
+  align-items: start;
+  padding: 0px;
+  margin: 0px;
+}
+
+.score{
+  width: 5vw;
+  overflow: visible;
+  height: 11vh;
+  //background-color: black;
+
+  //background-color: rgb(202, 3, 3);
+}
+
+.score_div{
+  width: 20vh;
+  height: 11vh;
+  //position: absolute;
+  z-index: 10;
+  //margin-top: -6vh;
+  //margin-left: -4.5vw;
+  text-align: center;
+  background-color: black;
+}
+
+.score_text{
+  font-size: 6vh;
+  margin-top: 1vh;
+}
+
+.game_date{
+  margin-top: -6vh;
+  font-size: 1.7vh;
+}
+
+.team_image{
+  margin: 0px;
+  padding: 0px;
+  width: 20vh;
+  margin-top: -4.5vh;
+  position: absolute;
+}
+
+.img_left{
+  margin-left: -14vw;
+}
+
+.img_right{
+  margin-left: 3vw;
+  margin-left: 5vh;
+}
+
+.team_name{
+  font-size: 5vh;
+  margin-top: 1vh;
+}
+
+.team_left{
+  margin-left: 4vw;
+}
+
+.team_right{
+  margin-left: -4vw;
+}
+
+.full_team_name{
+  font-size: 1.8vh;
+  margin-top: -5vh;
+}
+
+.rotate-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 9999;
+}
+
+@media (max-width: 1000px) and (orientation: landscape) {
+  .side_menu{
+    //background-color: red;
+    //width: 1000px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .center{
+    float:right;
+  }
+}

@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <div class="perspective-wrapper">
+    <div class="heatmap-container">
+      <!-- Grid Cells -->
+      <div 
+        class="heatmap-cell"
+        *ngFor="let cell of cells"
+        [style.background]="cell.color"
+        (mouseenter)="showTooltip($event, cell)"
+        (mousemove)="moveTooltip($event)"
+        (mouseleave)="hideTooltip()"
+      >
+        <span *ngIf="cell.qbr">{{ cell.qbr }}</span>
+      </div>
+
+      <div
+        *ngFor="let line of yardlineLabels"
+        class="yardline-line"
+        [style.top]="line.position"
+      ></div>
+
+      <div
+        *ngFor="let line of yardlineLabels"
+        class="yardline-label"
+        [style.top]="'calc(' + line.position + ' - 4px)'"
+      >
+        {{ line.label }}
+      </div>
+
+    </div>
+  </div>
+  <div id="tooltip" #tooltip class="heatmap-tooltip" style="display: none;"></div>
+</div>
+
+

@@ -1,0 +1,62 @@
+<div class="dynamic-wrapper" #dynwrap>
+  <div class="scalable" #scalable>
+    <div class="wrapper">
+      <div class="entire-field">
+
+        <div class="scroll-field">
+          <div class="field">
+
+            <div class="indicator" [ngStyle]="positionIndicator()">
+              <div class="play-desc">{{indicatorDesc}}</div>
+              <ion-icon name="caret-down-outline" class="indicator-icon" id="indic"></ion-icon>
+            </div>
+
+            <div *ngFor="let drive of analysis.drives">
+              <div class="driveVis" [ngStyle]="driveDisplay(drive)">
+                <div class="driveStart" [ngStyle]="calcStyleDriveStart(drive)">
+                  <div class="ind" [ngStyle]="calcStyleDriveStartAbs(drive)"></div>
+                </div>
+                <div class="outcome" [ngStyle]="calcStyleOutcome(drive)">
+                  <div [ngStyle]="calcStyleOutcomeText(drive)" class="outcome-text">{{calcDriveOutcome(drive)}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="endzone-l" [ngStyle]="calcStyleEndzone(true)">
+
+          <img src="https://www.fantasynerds.com/images/nfl/wordmarks/{{analysis.home}}.png"
+            class="endzone-wordmark endzone-left" />
+
+        </div>
+
+        <div class="endzone-r" [ngStyle]="calcStyleEndzone(false)">
+          <img src="https://www.fantasynerds.com/images/nfl/wordmarks/{{analysis.away}}.png"
+            class="endzone-wordmark endzone-right" />
+
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <div id="epa-chart"></div>
+
+        <div class="custom-range-container">
+          <input type="range" min="0" [max]="analysis.amountOfPlays" [value]="selectedPlay" (input)="onChange($event)"
+            class="custom-range" />
+          <div class="slider-ticks">
+            <span *ngFor="let play of analysis.allPlaysOfGame" class="tick" [ngStyle]="quarterTick(play)"></span>
+          </div>
+
+        </div>
+
+        <div class="drive-indicator" id="drive-indicator">
+          <div *ngFor="let drive of analysis.drives">
+            <div class="drive-bars" [ngStyle]="calcStyleDriveLength(drive)"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

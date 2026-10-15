@@ -1,0 +1,35 @@
+<ion-content>
+
+  <div *ngIf="!landscape" class="fullscreen">
+    <div class="rotate-warning">
+      <h1>Use landscape mode</h1>
+    </div>
+  </div>
+
+
+  <!-- <div *ngIf="landscape"> -->
+ <div *ngIf="isLoaded">
+  <app-scoreboard></app-scoreboard>
+
+  <div class="overview">
+    <app-driveoverview class="drive"></app-driveoverview>
+    <app-teamoverview class="team"></app-teamoverview>
+  </div>
+
+  <!-- @Pascal - add your own components here with *ngIf="isLoaded" -->
+  <div class="page-layout">
+    <app-treemap></app-treemap>
+
+    <app-heatmap></app-heatmap>
+  </div>
+ </div>
+
+  <ion-button (click)="goBack()" class="btn">Go Back</ion-button>
+
+  <div class="center" *ngIf="!isLoaded">
+    <ion-spinner name="lines" class="loading vert_center"></ion-spinner>
+  </div>
+<!-- </div> -->
+
+</ion-content>
+
